@@ -1,0 +1,61 @@
+id,json
+12345,"{
+  ""id"": ""CauStatus:GW:12345"",
+  ""updaterId"": ""33864911"",
+  ""mid"": ""496209511880"",
+  ""updateStatus"": ""updated"",
+  ""updateTimestamp"": ""2018-07-31T17:07:30Z"",
+  ""updateSource"": ""CARDCONNECT_GATEWAY"",
+  ""platformCode"": ""FNOR"",
+  ""accountNumberLast4"": ""1234"",
+  ""expiry"": ""2020-07"",
+  ""brand"": ""VISA"",
+  ""newAccountNumberLast4"": ""4321"",
+  ""newExpiry"": ""2021-07"",
+  ""newBrand"": ""VISA"",
+  ""updateRequestSent"": ""2018-07-24T17:07:30Z"",
+  ""updateResponseReceived"": ""2018-07-25T17:07:30Z"",
+  ""events"": [
+    {
+      ""updateStatus"": ""expiry"",
+      ""updateTimestamp"": ""2018-07-31T17:07:30Z"",
+      ""accountNumberLast4"": ""1234"",
+      ""expiry"": ""2018-07"",
+      ""brand"": ""VISA"",
+      ""newAccountNumberLast4"": ""1234"",
+      ""newExpiry"": ""2021-07"",
+      ""newBrand"": ""VISA"",
+      ""newToken"": ""9419999999990707""
+    }
+  ]
+}"
+21345,"{
+  ""id"": ""CauStatus:GW:21345"",
+  ""updaterId"": ""33864911"",
+  ""mid"": ""496209511880"",
+  ""updateStatus"": ""updated"",
+  ""updateTimestamp"": ""2018-07-31T17:07:30Z"",
+  ""updateSource"": ""CARDCONNECT_GATEWAY"",
+  ""platformCode"": ""FNOR"",
+  ""accountNumberLast4"": ""1234"",
+  ""expiry"": ""2020-07"",
+  ""brand"": ""VISA"",
+  ""newAccountNumberLast4"": ""4321"",
+  ""newExpiry"": ""2021-07"",
+  ""newBrand"": ""VISA"",
+  ""updateRequestSent"": ""2018-07-24T17:07:30Z"",
+  ""updateResponseReceived"": ""2018-07-25T17:07:30Z"",
+  ""events"": [
+    {
+      ""updateStatus"": ""expiry"",
+      ""updateTimestamp"": ""2018-07-31T17:07:30Z"",
+      ""accountNumberLast4"": ""1234"",
+      ""expiry"": ""2018-07"",
+      ""brand"": ""VISA"",
+      ""newAccountNumberLast4"": ""1234"",
+      ""newExpiry"": ""2021-07"",
+      ""newBrand"": ""VISA"",
+      ""newToken"": ""9419999999990707""
+    }
+  ]
+}"

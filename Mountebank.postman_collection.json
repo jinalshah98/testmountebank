@@ -1,0 +1,340 @@
+{
+	"info": {
+		"_postman_id": "367d7982-4a12-42c2-897a-2ca0ebbacda5",
+		"name": "Mountebank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "settings-imposters",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "gateway",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "gfnlV4yBll2q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "SourceSystem",
+						"type": "text",
+						"value": "CoPilot",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"properties\": {\n        \"headers\": {\n           \n            \"eventId\": \"12345622178\",\n             \"routingKey\": \"cardconnect.authentication.forcecredit.2fa\"\n        }\n    },\n    \"routing_key\": \"cardconnect.authentication.forcecredit.2fa\",\n    \"payload\": \"{\\\"merchantId\\\":85809430,\\\"notify\\\":true,\\\"timeZone\\\":\\\"America\\/Los_Angeles\\\",\\\"siteUserId\\\":49700,\\\"twoFactorCode\\\":\\\"80297645\\\"}\",\n    \"payload_encoding\": \"string\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				},
+				"description": "Since Diligence approval event takes a long time to get published, and that's if if it gets published at all, this request mocks Diligence and calls RabbitMQ to publish the approval event."
+			},
+			"response": []
+		},
+		{
+			"name": "Hello",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"const moment = require('moment');\r",
+							"var time =moment().toISOString();\r",
+							"var time1= moment().unix();\r",
+							"pm.globals.set(\"time\", time1);\r",
+							"\r",
+							"pm.globals.set(\"timestamp\", time);\r",
+							"\r",
+							"\r",
+							"//5.1.1 bounce \r",
+							"//5.7.606 blocked\r",
+							"//\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "FnIw5xVoO2LuOQ",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "sgwebhook",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dGVzdGluZzp0ZXN0aW5nMTIz",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"status\": \"5.1.1\",\n    \"env\": \"qa\",\n   \"dc\": \"vf\",\n    \"ip\": \"149.72.154.179\",\n    \"timestamp\": 1589976102,\n    \"log_type\": \"webhook\",\n    \"application\": \"sendgrid\",\n    \"@version\": \"1\",\n    \"event\": \"bounce\",\n    \"email\": \"cbowers@cardconnect.com\",\n    \"tls\": 1,\n    \"host\": \"10.100.5.19\",\n    \"@timestamp\": \"2020-05-20T12:01:53.780Z\",\n    \"reason\": \"550 5.1.1 User Unknown\",\n    \"sg_event_id\": \"Ym91bmNlLTItMTU4ODIxNTAtNm9XNkJZejNUMm1HV3lEUnBTaUVjQS01\",\n    \"type\": \"bounce\",\n    \"sg_message_id\": \"6oW6BYz3T2mGWyDRpSiEcA.filterdrecv-p3las1-cb48d7cc9-jbhzl-19-5EC51BCB-27.5\",\n    \"smtp-id\": \"<1588171229.53.1596042050111@vfq1-notify-2.ftscc.net>\"\n  }\n]"
+				},
+				"url": {
+					"raw": "http://localhost:5001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001"
+				},
+				"description": "simple auth"
+			},
+			"response": []
+		},
+		{
+			"name": "CAU History Fetch",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"function setPastTimeStamp() {\r",
+							"const moment = require('moment');\r",
+							"var time =moment().subtract(25, 'hour').toISOString();\r",
+							"return time;\r",
+							"}\r",
+							"\r",
+							"function setFutureTimeStamp() {\r",
+							"const moment = require('moment');\r",
+							"var time =moment().add(1500, 'hour').toISOString();\r",
+							"return time;\r",
+							"}\r",
+							"\r",
+							"pm.environment.set(\"pastTimeStamp\", setPastTimeStamp());\r",
+							"pm.environment.set(\"futureTimeStamp\", setFutureTimeStamp());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "management",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "management",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dGVzdGluZzp0ZXN0aW5nMTIz"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sentAfter\": \"{{pastTimeStamp}}\",\n  \"sentBefore\":\"{{futureTimeStamp}}\",\n  \"smtpStatusCode\": \"550 5.7.606\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5002/card-account-updater-reporting/api/customers/21345",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"card-account-updater-reporting",
+						"api",
+						"customers",
+						"21345"
+					]
+				},
+				"description": "simple auth"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Imposter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"function setPastTimeStamp() {\r",
+							"const moment = require('moment');\r",
+							"var time =moment().subtract(25, 'hour').toISOString();\r",
+							"return time;\r",
+							"}\r",
+							"\r",
+							"function setFutureTimeStamp() {\r",
+							"const moment = require('moment');\r",
+							"var time =moment().add(1500, 'hour').toISOString();\r",
+							"return time;\r",
+							"}\r",
+							"\r",
+							"pm.environment.set(\"pastTimeStamp\", setPastTimeStamp());\r",
+							"pm.environment.set(\"futureTimeStamp\", setFutureTimeStamp());"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "management",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "management",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic dGVzdGluZzp0ZXN0aW5nMTIz"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sentAfter\": \"{{pastTimeStamp}}\",\n  \"sentBefore\":\"{{futureTimeStamp}}\",\n  \"smtpStatusCode\": \"550 5.7.606\"\n}"
+				},
+				"url": {
+					"raw": "localhost:5002/customers/3",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"customers",
+						"3"
+					]
+				},
+				"description": "simple auth"
+			},
+			"response": []
+		}
+	]
+}

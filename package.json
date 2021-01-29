@@ -1,0 +1,15 @@
+{
+  "name": "testmountebank",
+  "version": "1.0.0",
+  "description": "build mock service ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "jshah",
+  "license": "ISC",
+  "dependencies": {
+    "mountebank": "^2.4.0",
+    "node-fetch": "^2.6.1"
+  }
+}
